@@ -1,0 +1,104 @@
+#N canvas 746 204 550 389 10;
+#X declare -lib mrpeach;
+#X obj 448 18 import mrpeach;
+#X obj 20 21 udpreceive 8000;
+#X obj 20 47 unpackOSC;
+#X obj 377 322 repeat 5;
+#X obj 354 348 print *******;
+#X obj 350 323 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1 209 sel 1;
+#X obj 40 209 sel 1;
+#X obj 85 209 sel 1;
+#X obj 124 210 sel 1;
+#X text 134 11 runs with layout beatmachine in TouchOSC (android);
+#X obj -3 108 print;
+#X obj 376 293 s accxyz;
+#X obj 376 268 spigot;
+#X obj 388 242 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 380 204 tgl 15 0 effect_switch empty effect_switch 17 7 0 10
+-262144 -1 -1 1 1;
+#X obj 165 211 sel 1;
+#X obj 204 212 sel 1;
+#X obj 12 250 s loop1Go-r;
+#X obj 17 280 s loop2Go-r;
+#X obj 109 251 s loop1_cut-r;
+#X obj 113 279 s Loop2Cut-r;
+#X obj 18 311 s loop3Go-r;
+#X obj 211 282 s loop2Reset-r;
+#X obj 212 253 s loop1ctrl-r;
+#X obj 112 312 s Loop3Cut-r;
+#X obj 212 313 s loop3Reset-r;
+#X obj 240 211 sel 1;
+#X obj 281 212 sel 1;
+#X obj 320 213 sel 1;
+#X obj 466 239 s save;
+#X obj 416 182 sel 1;
+#N canvas 1 387 329 342 android_layout 0;
+#X obj 61 10 cnv 15 200 300 empty empty osc_looper 100 12 0 14 -233017
+-66577 0;
+#X obj 67 100 cnv 15 50 50 empty empty REC_lay1 0 12 0 10 -159808 -66577
+0;
+#X obj 136 100 cnv 15 50 50 empty empty PLAY_lay1 0 12 0 10 -159808
+-66577 0;
+#X obj 203 100 cnv 15 50 50 empty empty BANG_lay1 0 12 0 10 -159808
+-86277 0;
+#X obj 68 166 cnv 15 50 50 empty empty REC_lay2 0 12 0 10 -159808 -66577
+0;
+#X obj 137 166 cnv 15 50 50 empty empty PLAY_lay1 0 12 0 10 -159808
+-66577 0;
+#X obj 204 166 cnv 15 50 50 empty empty RESET_lay2 0 12 0 10 -203904
+-66577 0;
+#X obj 68 232 cnv 15 50 50 empty empty REC_lay2 0 12 0 10 -159808 -66577
+0;
+#X obj 137 232 cnv 15 50 50 empty empty PLAY_lay3 0 12 0 10 -159808
+-66577 0;
+#X obj 204 232 cnv 15 50 50 empty empty RESET_lay3 0 12 0 10 -203904
+-66577 0;
+#X obj 203 69 cnv 15 50 20 empty empty save 5 12 0 8 -4034 -66577 0
+;
+#X obj 70 42 cnv 15 20 20 empty empty effect_switch 0 12 0 8 -4032
+-66577 0;
+#X obj 69 16 cnv 15 20 20 empty empty position_ctrl 0 12 0 8 -257985
+-66577 0;
+#X obj 136 69 cnv 15 50 20 empty empty rec&listen 0 12 0 8 -4034 -66577
+0;
+#X restore 257 30 pd android_layout;
+#X obj 469 170 s muteOff-r;
+#X obj 84 127 routeOSC /1/push1 /1/push4 /1/push2 /1/push5 /1/push3
+/1/push6 /1/push7 /1/push8 /1/push9 /accxyz /1/toggle1 /1/toggle2 /1/push12
+/1/push11;
+#X obj 450 136 sel 1;
+#X connect 1 0 2 0;
+#X connect 2 0 11 0;
+#X connect 2 0 34 0;
+#X connect 3 0 4 0;
+#X connect 5 0 3 0;
+#X connect 6 0 18 0;
+#X connect 7 0 20 0;
+#X connect 8 0 19 0;
+#X connect 9 0 21 0;
+#X connect 13 0 12 0;
+#X connect 14 0 13 1;
+#X connect 16 0 22 0;
+#X connect 17 0 25 0;
+#X connect 27 0 24 0;
+#X connect 28 0 23 0;
+#X connect 29 0 26 0;
+#X connect 31 0 30 0;
+#X connect 34 0 6 0;
+#X connect 34 1 7 0;
+#X connect 34 2 8 0;
+#X connect 34 3 9 0;
+#X connect 34 4 16 0;
+#X connect 34 5 17 0;
+#X connect 34 6 27 0;
+#X connect 34 7 28 0;
+#X connect 34 8 29 0;
+#X connect 34 9 13 0;
+#X connect 34 10 14 0;
+#X connect 34 11 15 0;
+#X connect 34 12 31 0;
+#X connect 34 13 35 0;
+#X connect 35 0 33 0;
