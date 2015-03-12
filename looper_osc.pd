@@ -1,16 +1,16 @@
-#N canvas 374 77 896 667 10;
+#N canvas 372 78 896 667 10;
 #X obj 6 5 cnv 15 880 650 empty empty empty 20 12 0 14 -1 -66577 0
 ;
 #X obj 240 179 tgl 150 1 loop1Go loop1Go-r empty 17 7 0 10 -260097
 -1 -1 0 1;
 #X obj 397 179 tgl 150 1 loop1Cut loop1Cut-r empty 17 7 0 10 -4034
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 554 179 bng 150 250 50 0 loop1-rwd loop1-rwd-r bang 17 7 0 10
 -262144 -1 -1;
 #X obj 240 333 tgl 150 1 loop2Go loop2Go-r empty 17 7 0 10 -260097
 -1 -1 0 1;
 #X obj 397 333 tgl 150 1 loop2Cut loop2Cut-r empty 17 7 0 10 -4034
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 553 333 bng 150 250 50 0 loop2Reset loop2Reset-r reset2 17 7
 0 10 -262144 -1 -1;
 #X obj 21 386 tgl 120 1 muteOff muteOff-r Mute_on_Rec 17 7 0 10 -262144
@@ -20,7 +20,7 @@
 #X obj 240 488 tgl 150 1 loop3Go loop3Go-r empty 17 7 0 10 -260097
 -1 -1 0 1;
 #X obj 397 488 tgl 150 1 loop3Cut loop3Cut-r empty 17 7 0 10 -4034
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 552 488 bng 150 250 50 0 loop3Reset loop3Reset-r reset3 17 7
 0 10 -262144 -1 -1;
 #X obj 34 11 nbx 5 20 -1e+37 1e+37 0 0 Chunk-Size Chunk-Size-r Chunk_Size
@@ -40,7 +40,7 @@ Transpose 75 8 0 13 -262144 -1 -4034 0 256;
 #X obj 450 26 hradio 50 1 0 5 empty SelEfLayer Sel_Ef_Layer 0 -8 0
 10 -261682 -45076 -4034 2;
 #X obj 243 86 hsl 460 80 0 1 0 0 empty loop-Show empty -2 -8 0 10 -257985
--258113 -1 17879 1;
+-258113 -1 45762 1;
 #X obj 21 246 tgl 120 1 ctrl_input ctrl_input-r choose_input 17 7 0
 10 -262144 -1 -1 0 1;
 #X obj 708 182 vradio 151 1 0 3 choose_grava choose_grava-r choose_rec_layer
@@ -55,7 +55,7 @@ loop1 \; choose_grava-r 1 \; Vol_loop1-r 0.3 \;;
 -99865 -257985 0;
 #X obj 20 516 cnv 15 120 130 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#N canvas 200 84 780 665 audio 0;
+#N canvas 198 85 780 665 audio 1;
 #X obj -38 -93 loadbang;
 #X obj 500 182 tabwrite~ loop1;
 #X obj -30 376 table loop1;
@@ -88,7 +88,7 @@ loop1 \; choose_grava-r 1 \; Vol_loop1-r 0.3 \;;
 #X msg 132 -255 \; masterMute 0 \; loop2Som 1 5 \;;
 #X obj 448 326 outlet~;
 #X obj 419 297 spigot~;
-#X obj 478 262 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 478 262 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 436 122 *~;
 #X obj 569 69 r~ phase;
@@ -311,7 +311,7 @@ but must be wrapped around loop length;
 1;
 #X obj 413 138 outlet~;
 #X obj 374 100 spigot~;
-#X obj 449 108 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 449 108 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 360 -94 *~;
 #X obj 471 -214 r~ phase;
@@ -384,7 +384,7 @@ but must be wrapped around loop length;
 #X floatatom 276 337 5 0 0 0 - - -, f 5;
 #X obj 284 182 snapshot~;
 #X obj 306 149 metro 100;
-#X obj 313 128 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 313 128 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 127 208 5 0 0 0 - - -, f 5;
 #X obj 184 283 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -457,10 +457,10 @@ but must be wrapped around loop length;
 0 1;
 #X obj 145 327 clip~ -1 1;
 #X obj 146 299 hip~ 30;
-#N canvas 98 102 1265 665 Player-1 0;
+#N canvas 96 102 1265 665 Player-1 1;
 #X obj 408 426 outlet~;
 #X obj 371 398 spigot~;
-#X obj 411 374 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 411 374 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 137 70 r Smpl1Lenght;
 #X floatatom 1046 -150 4 0 100 0 - - -, f 4;
@@ -506,7 +506,7 @@ but must be wrapped around loop length;
 #X obj 1048 52 r chunk-size-s1;
 #X obj 1046 -107 s chunk-size-s1;
 #X obj 409 -158 nbx 9 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0
-10 -262144 -1 -1 2735.67 256;
+10 -262144 -1 -1 5423.67 256;
 #X floatatom 165 203 5 0 0 0 - - -, f 5;
 #X floatatom 166 258 5 0 0 0 - - -, f 5;
 #X obj 166 230 expr 100/$f1;
@@ -603,6 +603,7 @@ but must be wrapped around loop length;
 #X obj 277 80 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 414 280 * 8;
+#X obj 413 247 - 0.08;
 #X connect 1 1 0 0;
 #X connect 2 0 1 1;
 #X connect 3 0 65 0;
@@ -699,12 +700,13 @@ but must be wrapped around loop length;
 #X connect 107 0 108 0;
 #X connect 108 0 106 1;
 #X connect 109 0 110 0;
-#X connect 109 0 115 0;
+#X connect 109 0 116 0;
 #X connect 111 0 67 0;
 #X connect 112 0 111 0;
 #X connect 113 0 114 0;
 #X connect 114 0 112 0;
 #X connect 115 0 107 0;
+#X connect 116 0 115 0;
 #X restore 93 209 pd Player-1;
 #X obj 233 244 tgl 15 0 empty eff_lay3 empty 17 7 0 10 -262144 -1 -1
 0 1;
@@ -848,7 +850,7 @@ choose_eff 0 \; MainVol-r 1 \; IN_set_SampleLentgh 1 \; Vol_loop1-r
 -66577 0;
 #X restore 25 571 pd android_layout;
 #X text 33 531 Mick & X 2013;
-#N canvas 1 89 455 634 soundcheck 0;
+#N canvas 1 133 455 634 soundcheck 1;
 #X obj 273 335 dac~;
 #X obj 283 -14 r~ out;
 #N canvas 12 321 450 383 MUTE 0;
@@ -881,15 +883,15 @@ choose_eff 0 \; MainVol-r 1 \; IN_set_SampleLentgh 1 \; Vol_loop1-r
 #X obj 349 -6 r MainVol;
 #X obj 9 386 cnv 15 320 200 empty empty empty 20 12 0 14 -203904 -66577
 0;
-#X obj 250 414 vsl 35 128 0 8 0 0 empty MainVol-r Vol 0 -9 0 10 -99865
--1 -1 1587 1;
+#X obj 250 414 vsl 35 128 0.08 8 1 0 empty MainVol-r Vol 0 -9 0 10
+-99865 -1 -1 5987 1;
 #X obj 250 557 s MainVol;
-#X obj 38 410 vsl 35 128 0 8 0 0 Vol_loop1 Vol_loop1-r Vol_loop1 0
--9 0 10 -99865 -1 -1 1900 1;
-#X obj 104 410 vsl 35 128 0 8 0 0 Vol_loop2 Vol_loop2-r Vol_loop2 0
--9 0 10 -99865 -1 -1 2170 1;
+#X obj 38 410 vsl 35 128 0.08 8 1 0 Vol_loop1 Vol_loop1-r Vol_loop1
+0 -9 0 10 -99865 -1 -1 1200 1;
+#X obj 104 410 vsl 35 128 0.08 8 1 0 Vol_loop2 Vol_loop2-r Vol_loop2
+0 -9 0 10 -99865 -1 -1 700 1;
 #X obj 175 412 vsl 35 128 0 8 0 0 Vol_loop3 Vol_loop3-r Vol_loop3 0
--9 0 10 -99865 -1 -1 2044 1;
+-9 0 10 -99865 -1 -1 794 1;
 #X obj 17 -13 cnv 15 220 320 empty empty empty 20 12 0 14 -204786 -66577
 0;
 #X obj 99 4 adc~;
@@ -901,169 +903,25 @@ choose_eff 0 \; MainVol-r 1 \; IN_set_SampleLentgh 1 \; Vol_loop1-r
 #X obj 124 105 send~ in1;
 #X obj 318 86 *~;
 #X obj 269 111 *~;
-#N canvas 123 140 633 562 sound2OSC 0;
-#X obj 35 11 inlet~;
-#X obj 211 370 sendOSC;
-#X msg 241 278 disconnect;
-#X obj 211 395 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X floatatom 58 257 5 0 0 0 - - -, f 5;
-#X obj 15 204 line 0 20;
-#X obj 415 15 inlet~;
-#X obj 410 175 line 0 20;
-#X obj 412 116 speedlim 100;
-#X obj 417 148 pack 0 100;
-#X msg 31 299 send /pitch1 \$1;
-#X msg 390 285 send /pitch2 \$1;
-#X obj 411 60 fiddle~ 2048 1 20 1;
-#X obj 271 148 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 268 170 sel 1 0;
-#X obj 35 67 fiddle~ 2048 1 20 1;
-#X obj 103 203 line 0 20;
-#X msg 67 378 send /amp1 \$1;
-#X obj 22 178 pack 0 50;
-#X obj 110 176 pack 0 50;
-#X obj 105 144 speedlim 50;
-#X obj 17 145 speedlim 50;
-#X floatatom 73 108 5 0 0 0 - - -, f 5;
-#X msg 392 365 send /amp2 \$1;
-#X obj 506 181 line 0 20;
-#X obj 508 122 speedlim 100;
-#X obj 513 154 pack 0 100;
-#X msg 407 324 send /attack2 1;
-#X msg 40 342 send /attack1 1;
-#X obj 515 206 max 30;
-#X obj 515 228 change;
-#X msg 200 241 connect 192.168.0.100 9997;
-#N canvas 137 185 1053 486 pitch-roll 0;
-#X obj 125 57 unpack f f f;
-#X obj 339 8 inlet;
-#X obj 129 107 expr $f1 / $f2;
-#X obj 129 139 atan;
-#X obj 201 153 expr if ($f1 > 0 \, 3.14159 \, -3.14159);
-#X obj 122 207 pack f f f;
-#X obj 123 235 expr if ($f3 <= 0 \, $f1 + $f2 \, $f1);
-#X obj 478 459 outlet;
-#X obj 455 61 unpack f f f;
-#X obj 459 111 expr $f1 / $f2;
-#X obj 455 144 atan;
-#X obj 482 183 expr if ($f1 > 0 \, 3.14159 \, -3.14159);
-#X obj 452 211 pack f f f;
-#X obj 453 239 expr if ($f3 <= 0 \, $f1 + $f2 \, $f1);
-#X obj 455 267 * -1;
-#X text 431 428 pitch;
-#X obj 767 48 unpack f f f;
-#X obj 706 84 expr sqrt(pow($f1 \, 2) + pow($f2 \, 2) + pow($f3 \,
-2) );
-#X text 545 433 total acceleration;
-#X obj 844 120 s TotalAcc;
-#X floatatom 721 113 5 0 0 0 - - -, f 5;
-#X obj 475 431 pack f f f;
-#X text 498 409 roll;
-#X obj 410 326 t b f;
-#X obj 565 331 t b f;
-#X connect 0 1 2 0;
-#X connect 0 1 4 0;
-#X connect 0 2 2 1;
-#X connect 0 2 5 2;
-#X connect 1 0 0 0;
-#X connect 1 0 8 0;
-#X connect 1 0 16 0;
-#X connect 2 0 3 0;
-#X connect 3 0 5 0;
-#X connect 4 0 5 1;
-#X connect 5 0 6 0;
-#X connect 6 0 21 0;
-#X connect 8 0 9 0;
-#X connect 8 0 11 0;
-#X connect 8 2 9 1;
-#X connect 8 2 12 2;
-#X connect 9 0 10 0;
-#X connect 10 0 12 0;
-#X connect 11 0 12 1;
-#X connect 12 0 13 0;
-#X connect 13 0 14 0;
-#X connect 14 0 23 0;
-#X connect 16 0 17 0;
-#X connect 16 1 17 1;
-#X connect 16 2 17 2;
-#X connect 17 0 19 0;
-#X connect 17 0 20 0;
-#X connect 17 0 24 0;
-#X connect 21 0 7 0;
-#X connect 23 0 21 0;
-#X connect 23 1 21 1;
-#X connect 24 0 21 0;
-#X connect 24 1 21 2;
-#X restore 525 343 pd pitch-roll;
-#X obj 530 304 r accxyz;
-#X msg 525 371 send /scratch \$1 \$2 \$3;
-#X floatatom -20 377 5 0 0 0 - - -, f 5;
-#X connect 0 0 15 0;
-#X connect 1 0 3 0;
-#X connect 2 0 1 0;
-#X connect 4 0 10 0;
-#X connect 5 0 10 0;
-#X connect 6 0 12 0;
-#X connect 7 0 11 0;
-#X connect 8 0 9 0;
-#X connect 9 0 7 0;
-#X connect 10 0 1 0;
-#X connect 11 0 1 0;
-#X connect 12 0 8 0;
-#X connect 12 1 27 0;
-#X connect 12 3 25 0;
-#X connect 13 0 14 0;
-#X connect 14 0 31 0;
-#X connect 14 1 2 0;
-#X connect 15 0 21 0;
-#X connect 15 1 28 0;
-#X connect 15 3 20 0;
-#X connect 16 0 17 0;
-#X connect 17 0 1 0;
-#X connect 18 0 5 0;
-#X connect 19 0 16 0;
-#X connect 20 0 19 0;
-#X connect 21 0 18 0;
-#X connect 22 0 21 1;
-#X connect 22 0 18 1;
-#X connect 22 0 20 1;
-#X connect 22 0 19 1;
-#X connect 23 0 1 0;
-#X connect 24 0 29 0;
-#X connect 25 0 26 0;
-#X connect 26 0 24 0;
-#X connect 27 0 1 0;
-#X connect 28 0 1 0;
-#X connect 29 0 30 0;
-#X connect 30 0 23 0;
-#X connect 31 0 1 0;
-#X connect 32 0 34 0;
-#X connect 33 0 32 0;
-#X connect 34 0 1 0;
-#X restore 201 50 pd sound2OSC;
 #X obj 270 145 atan~;
 #X obj 352 222 - 100;
 #X connect 1 0 23 0;
 #X connect 2 0 22 1;
 #X connect 3 0 4 0;
 #X connect 4 0 22 0;
-#X connect 6 0 26 0;
+#X connect 6 0 25 0;
 #X connect 7 0 3 0;
 #X connect 9 0 10 0;
 #X connect 15 0 16 0;
 #X connect 15 1 18 0;
 #X connect 16 0 17 0;
 #X connect 17 0 20 0;
-#X connect 17 0 24 0;
 #X connect 18 0 19 0;
 #X connect 19 0 21 0;
-#X connect 19 0 24 1;
 #X connect 22 0 23 1;
-#X connect 23 0 25 0;
-#X connect 25 0 6 0;
-#X connect 25 0 0 0;
-#X connect 25 0 0 1;
-#X connect 26 0 5 0;
+#X connect 23 0 24 0;
+#X connect 24 0 6 0;
+#X connect 24 0 0 0;
+#X connect 24 0 0 1;
+#X connect 25 0 5 0;
 #X restore 32 548 pd soundcheck;
