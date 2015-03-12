@@ -1,4 +1,5 @@
-#N canvas 312 194 978 399 10;
+#N canvas 33 196 958 399 10;
+#X declare -lib mrpeach;
 #X obj 448 18 import mrpeach;
 #X obj 20 47 unpackOSC;
 #X obj 587 322 repeat 5;
@@ -12,7 +13,7 @@
 #X text 134 11 runs with layout beatmachine in TouchOSC (android);
 #X obj 586 293 s accxyz;
 #X obj 586 268 spigot;
-#X obj 594 250 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 594 250 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 375 211 sel 1;
 #X obj 414 212 sel 1;
@@ -116,7 +117,7 @@
 #X obj 18 262 routeOSC /acc /touch;
 #X obj 41 182 spigot;
 #X obj 87 184 tgl 15 0 empty empty check_osc 17 7 0 10 -262144 -1 -1
-1 1;
+0 1;
 #N canvas 711 170 457 388 send_TandV 0;
 #N canvas 1 235 1053 486 pitch-roll 0;
 #X obj 125 57 unpack f f f;
@@ -140,7 +141,7 @@
 2) );
 #X text 545 433 total acceleration;
 #X obj 844 120 s TotalAcc;
-#X floatatom 721 113 5 0 0 0 - - -, f 5;
+#X floatatom 721 113 5 0 0 0 - - -;
 #X obj 475 431 pack f f f;
 #X text 498 409 roll;
 #X obj 410 326 t b f;
@@ -179,14 +180,14 @@
 #X connect 24 1 21 2;
 #X restore 18 57 pd pitch-roll;
 #X obj 17 87 unpack f f f;
-#X floatatom 95 253 5 0 0 0 - - -, f 5;
-#X floatatom 27 239 5 0 0 0 - - -, f 5;
-#X floatatom 320 175 5 0 0 0 - - -, f 5;
+#X floatatom 95 253 5 0 0 0 - - -;
+#X floatatom 27 239 5 0 0 0 - - -;
+#X floatatom 320 175 5 0 0 0 - - -;
 #X obj 18 27 inlet acc;
 #X obj 20 306 s transposition-r;
 #X obj 23 284 * 10;
 #X obj 151 29 inlet touch;
-#X floatatom 145 82 5 0 0 0 - - -, f 5;
+#X floatatom 145 82 5 0 0 0 - - -;
 #X obj 147 59 unpack f f;
 #X obj 25 218 spigot;
 #X obj 73 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -194,7 +195,7 @@
 #X obj 96 219 spigot;
 #X obj 143 220 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X floatatom 202 83 5 0 0 0 - - -, f 5;
+#X floatatom 202 83 5 0 0 0 - - -;
 #X obj 239 128 change;
 #X obj 217 151 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -253,37 +254,7 @@
 #X connect 32 0 14 0;
 #X connect 32 0 12 0;
 #X restore 13 314 pd send_TandV;
-#X floatatom 41 109 3 0 0 0 - - -, f 3;
-#X floatatom 68 109 3 0 0 0 - - -, f 3;
-#X floatatom 95 109 3 0 0 0 - - -, f 3;
-#X floatatom 122 109 3 0 0 0 - - -, f 3;
-#X floatatom 150 109 5 0 0 0 - - -, f 5;
-#X obj 41 83 unpack 0 0 0 0 0;
-#N canvas 1 54 450 300 get.info 0;
-#X text 29 31 NOTE outlet #2 is for compatibility with mrpeach's net
-objects. you can get all info (and more) via outlet #3 as well.;
-#X obj 40 95 inlet outlet#3;
-#X obj 40 119 route address;
-#X floatatom 190 177 3 0 0 0 - - -, f 3;
-#X floatatom 217 177 3 0 0 0 - - -, f 3;
-#X floatatom 244 177 3 0 0 0 - - -, f 3;
-#X floatatom 271 177 3 0 0 0 - - -, f 3;
-#X text 147 176 from;
-#X floatatom 299 177 5 0 0 0 - - -, f 5;
-#X obj 190 151 unpack 0 0 0 0 0;
-#X obj 35 213 route port;
-#X floatatom 197 245 5 0 0 0 - - -, f 5;
-#X text 236 244 listening port;
-#X connect 1 0 2 0;
-#X connect 2 0 9 0;
-#X connect 2 1 10 0;
-#X connect 9 0 3 0;
-#X connect 9 1 4 0;
-#X connect 9 2 5 0;
-#X connect 9 3 6 0;
-#X connect 9 4 8 0;
-#X connect 10 0 11 0;
-#X restore 131 57 pd get.info;
+#X text 118 48 Only seems to work with pd extended;
 #X connect 1 0 45 0;
 #X connect 1 0 51 0;
 #X connect 1 0 52 0;
@@ -329,14 +300,7 @@ objects. you can get all info (and more) via outlet #3 as well.;
 #X connect 45 16 46 0;
 #X connect 46 0 44 0;
 #X connect 48 0 1 0;
-#X connect 48 1 60 0;
-#X connect 48 2 61 0;
 #X connect 51 0 54 0;
 #X connect 51 1 54 1;
 #X connect 52 0 47 0;
 #X connect 53 0 52 1;
-#X connect 60 0 55 0;
-#X connect 60 1 56 0;
-#X connect 60 2 57 0;
-#X connect 60 3 58 0;
-#X connect 60 4 59 0;
