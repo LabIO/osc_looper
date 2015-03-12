@@ -1,4 +1,4 @@
-#N canvas 95 54 896 540 10;
+#N canvas 93 55 895 662 10;
 #X declare -lib mrpeach;
 #X obj 6 5 cnv 15 880 650 empty empty empty 20 12 0 14 -1 -66577 0
 ;
@@ -39,9 +39,9 @@ Transpose 75 8 0 13 -262144 -1 -4034 0 256;
 #X obj 244 17 hradio 60 1 0 3 empty choose_eff choose_eff 0 -8 0 10
 -203904 -260097 -4034 0;
 #X obj 450 26 hradio 50 1 0 5 empty SelEfLayer Sel_Ef_Layer 0 -8 0
-10 -261682 -45076 -4034 3;
+10 -261682 -45076 -4034 0;
 #X obj 243 86 hsl 460 80 0 1 0 0 empty loop-Show empty -2 -8 0 10 -257985
--258113 -1 23785 1;
+-258113 -1 41619 1;
 #X obj 21 246 tgl 120 1 ctrl_input ctrl_input-r choose_input 17 7 0
 10 -262144 -1 -1 0 1;
 #X obj 708 182 vradio 151 1 0 3 choose_grava choose_grava-r choose_rec_layer
@@ -504,7 +504,7 @@ but must be wrapped around loop length;
 #X obj 848 102 r chunk-size-s1;
 #X obj 1046 -107 s chunk-size-s1;
 #X obj 409 -158 nbx 9 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0
-10 -262144 -1 -1 1502.33 256;
+10 -262144 -1 -1 5 256;
 #X floatatom 165 203 5 0 0 0 - - -;
 #X floatatom 166 258 5 0 0 0 - - -;
 #X obj 166 230 expr 100/$f1;
@@ -698,7 +698,7 @@ but must be wrapped around loop length;
 #X connect 110 0 109 0;
 #X restore 93 209 pd Player-1;
 #X obj 233 244 tgl 15 0 empty eff_lay3 empty 17 7 0 10 -262144 -1 -1
-1 1;
+0 1;
 #X obj 181 237 tgl 15 0 empty eff_lay2 empty 17 7 0 10 -262144 -1 -1
 0 1;
 #X obj 146 267 efeitos ----;
